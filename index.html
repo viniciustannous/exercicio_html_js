@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML com JS</title>
+    <link rel="stylesheet" href="./main.css" />
+</head>
+<body>
+    <div class="container">
+        <form id="Form">
+            <h2>Campo A</h2>
+            <input type="number" id="campoA" name="campoA"><br><br>
+            <h2>Campo B:</h2>
+            <input type="number" id="campoB" name="campoB"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <script>
+const form = document.getElementById('Form');
+const campoA = document.getElementById('campoA');
+const campoB = document.getElementById('campoB');
+const message = document.getElementById('message');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (parseInt(campoB.value) > parseInt(campoA.value)) {
+    message.textContent = 'Formulário válido!';
+  
+  } else {
+    message.textContent = 'Formulário inválido. O valor de B deve ser maior que o valor de A.';
+
+  }
+});
+    </script>
+</body>
+</html>
